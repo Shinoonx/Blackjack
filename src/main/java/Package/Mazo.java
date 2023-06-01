@@ -2,19 +2,15 @@ package Package;
 
 public class Mazo {
 
-	private Array mazo;
+	private Carta[] mazo;
 
-	public void getAttribute() {
-		// TODO - implement Mazo.getAttribute
+	public void mazo() {
+		// TODO - implement Mazo.mazo
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * 
-	 * @param attribute
-	 */
-	public void setAttribute(int attribute) {
-		// TODO - implement Mazo.setAttribute
+	public Arraylist getCarta() {
+		// TODO - implement Mazo.getCarta
 		throw new UnsupportedOperationException();
 	}
 

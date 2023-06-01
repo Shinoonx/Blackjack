@@ -2,32 +2,27 @@ package Package;
 
 public class Carta {
 
-	private String Pinta;
-	private Int Valor;
-	private String Symb;
+	private String pinta;
+	private Int valor;
+	private String symb;
 
 	/**
 	 * 
-	 * @param Pinta
-	 * @param Valor
-	 * @param Symb
+	 * @param pinta
+	 * @param valor
+	 * @param symb
 	 */
-	public Carta(String Pinta, Int Valor, String Symb) {
+	public Carta(String pinta, Int valor, String symb) {
 		// TODO - implement Carta.Carta
 		throw new UnsupportedOperationException();
 	}
 
-	public void getPinta() {
-		// TODO - implement Carta.getPinta
-		throw new UnsupportedOperationException();
-	}
-
-	public void getValor() {
+	public void getvalor() {
 		// TODO - implement Carta.getValor
 		throw new UnsupportedOperationException();
 	}
 
-	public String getSymb() {
+	public String getsymb() {
 		// TODO - implement Carta.getSymb
 		throw new UnsupportedOperationException();
 	}
