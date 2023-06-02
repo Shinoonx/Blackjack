@@ -7,7 +7,7 @@ public class Dealer {
 
 	private String nombre;
 	private ArrayList<Jugador> players = new ArrayList<Jugador>();
-	private ArrayList<Carta> mazo;
+	private ArrayList<Carta> mazo = new ArrayList<Carta>();
 	private ArrayList<Carta> mano = new ArrayList<Carta>();
 
 	public void setPlayers() {
@@ -20,7 +20,12 @@ public class Dealer {
 
 	public Dealer(String nombre) {
 		this.nombre = nombre;
-		this.mazo = mazo;
+	}
+
+	public void CrearMazito() {
+		Mazo mazito = new Mazo();
+		mazito.Mazo();
+		mazo = mazito.getCarta();
 	}
 
 	public void mezclarMazo() {
@@ -33,23 +38,10 @@ public class Dealer {
 			mazo.remove(0);
 			players.get(i).setMano(mazo.get(0));
 			mazo.remove(0);
+			players.get(i).setMano(mazo.get(0));
+			mazo.remove(0);
 
 			players.get(i).setPuntaje();
-		}
-
-		Scanner scanner = new Scanner(System.in);
-		String respuesta;
-
-		System.out.println("¿Deseas una tercera carta? (s/n)");
-		respuesta = scanner.nextLine();
-
-		if (respuesta.equalsIgnoreCase("s")) {
-			for (int i = 0; i < players.size(); i++) {
-				players.get(i).setMano(mazo.get(0));
-				mazo.remove(0);
-
-				players.get(i).setPuntaje();
-			}
 		}
 
 		mano.add(mazo.get(0));
@@ -65,14 +57,28 @@ public class Dealer {
 
 		for (int i = 0; i < players.size(); i++) {
 			if (players.get(i).getPuntaje() > 21) {
-				System.out.println("El jugador: " + players.get(i).getNombre() + " perdio");
+				System.out.println("El jugador: " + players.get(i).getNombre() + " Perdio, hermano aprenda a contar");
 			} else if ((puntaje > 21) && (players.get(i).getPuntaje() <= 21)) {
-				System.out.println("El jugador: " + players.get(i).getNombre() + " gano");
+				System.out.println("El jugador: " + players.get(i).getNombre() + " Gano, HERMANO FELICIDADES PUEDES DEJAR LA CARRERA");
 			} else if (puntaje < 21 && players.get(i).getPuntaje() < 21 && puntaje > players.get(i).getPuntaje()) {
-				System.out.println("El jugador: " + players.get(i).getNombre() + " Perdio");
+				System.out.println("El jugador: " + players.get(i).getNombre() + " Perdio, hermano como te gana el dealer wn ta to v0la0 y con cuea sabe contar");
 			} else if (puntaje < 21 && players.get(i).getPuntaje() < 21 && puntaje < players.get(i).getPuntaje()) {
-				System.out.println("El jugador: " + players.get(i).getNombre() + " Gano");
+				System.out.println("El jugador: " + players.get(i).getNombre() + " Gano, HERMANO FELICIDADES PUEDES DEJAR LA CARRERA");
+			}else  if (puntaje < 21 && players.get(i).getPuntaje() < 21 && puntaje == players.get(i).getPuntaje()) {
+				System.out.println("El jugador: " + players.get(i).getNombre() + "Empate, Los 2 igual de gile");
 			}
+
+		}
+	}
+	public void imprimirMano() {
+		System.out.println("Mano del Dealer:");
+		for (Carta carta : mano) {
+			System.out.println( carta.getvalor()+ " de " + carta.getsymb());
+		}
+	}
+	public void imprimirManoJugador() {
+		for (Jugador jugador : players) {
+			jugador.imprimirMano();
 		}
 	}
 }

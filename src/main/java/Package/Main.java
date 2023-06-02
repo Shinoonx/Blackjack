@@ -1,5 +1,4 @@
-package org.example;
-import Package.Dealer.java;
+package Package;
 public class Main {
     public static void main(String[] args) {
         BlockJock blockJock = new BlockJock();

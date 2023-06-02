@@ -16,7 +16,6 @@ public class Carta {
 		this.pinta = pinta;
 		this.valor = valor;
 		this.symb = symb;
-		throw new UnsupportedOperationException();
 	}
 
 	public int getvalor() {

@@ -6,7 +6,7 @@ public class Mazo {
 
 	private ArrayList<Carta> mazo = new ArrayList<Carta>();
 
-	public Mazo() {
+	public void Mazo() {
 		String symb = "";
 		int valor = 0;
 

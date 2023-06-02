@@ -10,9 +10,12 @@ public class BlockJock {
         String nombre = keyb.nextLine();
 
         Dealer dealer = new Dealer(nombre);
+        dealer.CrearMazito();
         dealer.setPlayers();
         dealer.mezclarMazo();
         dealer.darCartas();
+        dealer.imprimirManoJugador();
+        dealer.imprimirMano();
         dealer.calcularPuntaje();
     }
 }

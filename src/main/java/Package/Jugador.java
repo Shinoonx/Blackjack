@@ -21,13 +21,20 @@ public class Jugador {
 
 	public void setPuntaje() {
 		for (int i = 0; i < mano.size(); i++) {
-			puntaje = mano.get(1).getvalor() + puntaje;
+			puntaje = puntaje + mano.get(1).getvalor();
 
 		}
 	}
 
 	public int getPuntaje() {
 		return puntaje;
+	}
+
+	public void imprimirMano() {
+		System.out.println("Mano de " + nombre + ":");
+		for (Carta carta : mano) {
+			System.out.println(carta.getvalor() + " de " + carta.getsymb());
+		}
 	}
 }
 
