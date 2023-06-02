@@ -53,21 +53,26 @@ public class Dealer {
 	}
 
 	public void calcularPuntaje() {
-		int puntaje = mano.get(0).getvalor() + mano.get(1).getvalor() + mano.get(2).getvalor();
+		int puntajeDealer = mano.get(0).getvalor() + mano.get(1).getvalor() + mano.get(2).getvalor();
 
 		for (int i = 0; i < players.size(); i++) {
-			if (players.get(i).getPuntaje() > 21) {
-				System.out.println("El jugador: " + players.get(i).getNombre() + " Perdio, hermano aprenda a contar");
-			} else if ((puntaje > 21) && (players.get(i).getPuntaje() <= 21)) {
-				System.out.println("El jugador: " + players.get(i).getNombre() + " Gano, HERMANO FELICIDADES PUEDES DEJAR LA CARRERA");
-			} else if (puntaje < 21 && players.get(i).getPuntaje() < 21 && puntaje > players.get(i).getPuntaje()) {
-				System.out.println("El jugador: " + players.get(i).getNombre() + " Perdio, hermano como te gana el dealer wn ta to v0la0 y con cuea sabe contar");
-			} else if (puntaje < 21 && players.get(i).getPuntaje() < 21 && puntaje < players.get(i).getPuntaje()) {
-				System.out.println("El jugador: " + players.get(i).getNombre() + " Gano, HERMANO FELICIDADES PUEDES DEJAR LA CARRERA");
-			}else  if (puntaje < 21 && players.get(i).getPuntaje() < 21 && puntaje == players.get(i).getPuntaje()) {
-				System.out.println("El jugador: " + players.get(i).getNombre() + "Empate, Los 2 igual de gile");
-			}
+			int puntajeJugador = players.get(i).getPuntaje();
 
+			if (puntajeJugador > 21 && puntajeDealer > 21) {
+				System.out.println( " Ninguno de los 2 tiene suerte jaj");
+			} else if (puntajeJugador > 21) {
+				System.out.println("El jugador: " + players.get(i).getNombre() + " Perdió, hermano la mala cuea");
+			} else if (puntajeJugador <= 21 && puntajeJugador > puntajeDealer) {
+				System.out.println("El jugador: " + players.get(i).getNombre() + " Ganó, HERMANO FELICIDADES PUEDES DEJAR LA CARRERA");
+			} else if (puntajeDealer > 21) {
+				System.out.println("El jugador: " + players.get(i).getNombre() + " Ganó, HERMANO FELICIDADES PUEDES DEJAR LA CARRERA");
+			} else if (puntajeDealer <= 21 && puntajeDealer > puntajeJugador) {
+				System.out.println("El jugador: " + players.get(i).getNombre() + " Perdió, hermano como te gana el dealer ");
+			} else if (puntajeDealer <= 21 && puntajeDealer < puntajeJugador) {
+				System.out.println("El jugador: " + players.get(i).getNombre() + " Perdió, hermano como te gana el dealer ");
+			} else if (puntajeDealer <= 21 && puntajeDealer == puntajeJugador) {
+				System.out.println("El jugador: " + players.get(i).getNombre() + " Empate, Los 2 igual de giles");
+			}
 		}
 	}
 	public void imprimirMano() {
