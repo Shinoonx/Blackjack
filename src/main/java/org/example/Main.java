@@ -1,7 +1,8 @@
 package org.example;
-
+import Package.Dealer.java;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        BlockJock blockJock = new BlockJock();
+        blockJock.Jugar();
     }
 }

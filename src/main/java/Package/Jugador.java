@@ -1,44 +1,33 @@
 package Package;
-
+import java.util.ArrayList;
 public class Jugador {
 
 	private int puntaje;
-	private Carta[] cartas;
+	private ArrayList<Carta> mano = new ArrayList<Carta>();
 	private String nombre;
 
-	public void getPuntaje() {
-		// TODO - implement Jugador.getPuntaje
-		throw new UnsupportedOperationException();
+
+	public void setMano(Carta carta) {
+		mano.add(carta);
 	}
 
-	/**
-	 * 
-	 * @param Puntaje
-	 */
-	public void setPuntaje(int Puntaje) {
-		// TODO - implement Jugador.setPuntaje
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param nombre
-	 */
 	public Jugador(String nombre) {
-		// TODO - implement Jugador.Jugador
-		throw new UnsupportedOperationException();
+		this.nombre = nombre;
 	}
 
 	public String getNombre() {
-		return this.nombre;
+		return nombre;
 	}
 
-	/**
-	 * 
-	 * @param cartas
-	 */
-	public void setCartas(Carta[] cartas) {
-		this.cartas = cartas;
+	public void setPuntaje() {
+		for (int i = 0; i < mano.size(); i++) {
+			puntaje = mano.get(1).getvalor() + puntaje;
+
+		}
 	}
 
+	public int getPuntaje() {
+		return puntaje;
+	}
 }
+
